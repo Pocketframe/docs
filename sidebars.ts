@@ -4,14 +4,13 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'Pocketframe Documentation',
+      label: 'Pocketframe Docs',
       collapsed: false,
       items: [
         'intro',
         'getting-started',
         'configuration',
         'core-concepts',
-        'service-container',
         'routing',
         'middleware',
         'controllers',
@@ -25,7 +24,7 @@ const sidebars: SidebarsConfig = {
         'pocket-views-templating',
         'session',
         'validation',
-        'cli',
+        'console',
         'helper-functions',
         'contributing'
       ],
