@@ -192,11 +192,11 @@ Pocketframe provides a set of built-in validation rules that you can use to vali
   'username' => ['uppercase']
   ```
 
-- `sometime`: This rule ensures that the field contains only alphanumeric characters.
+- `sometimes`: Validating When Present. In some situations, you may wish to run validation checks against a field only if that field is present in the data being validated. To quickly accomplish this, add the sometimes rule to your rule list.
 -
   **Example**:
   ```php
-  'username' => ['sometime', 'required']
+  'username' => ['sometimes', 'required']
   ```
 
 - `file`: This rule ensures that the field contains a valid file.
