@@ -1,41 +1,41 @@
-# Website
+# [Pocketframe](https://pocketframe.github.io/docs)
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+### About Pocketframe
 
-### Installation
+Pocketframe is a lightweight yet powerful PHP framework designed to simplify modern web application development. It provides an intuitive structure, elegant syntax, and a modular approach, enabling developers to build scalable, high-performance applications effortlessly.
 
-```
-$ yarn
-```
+- A modular and extendable service container for managing dependencies.
+- A fast and straightforward routing system.
+- An intuitive ORM that simplifies database interactions.
+- An efficient task execution system for handling background processes.
+- A migration system to streamline database evolution.
+- A view system that allows you to separate your application's logic from its presentation.
+- A middleware system that allows you to add functionality to your application.
 
-### Local Development
+Pocketframe prioritizes ease of use, maintainability, and scalability, allowing developers to focus on crafting high-quality applications.
 
-```
-$ yarn start
-```
+## Learning Pocketframe
+**You can access the documentation at [https://pocketframe.github.io/docs](https://pocketframe.github.io/docs).**
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Pocketframe offers detailed documentation and hands-on guides to help developers of all skill levels get up to speed quickly. Resources include:
 
-### Build
+- Practical tutorial and real-world examples.
+- Clear breakdowns of key framework features.
+- Best practices for structuring and optimizing applications.
 
-```
-$ yarn build
-```
+## Contributing
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+We welcome contributions to Pocketframe in various forms, including code improvements, documentation updates, and community engagement. The contribution guidelines can be found in the official Pocketframe documentation.
 
-### Deployment
+### Community Guidelines
 
-Using SSH:
+To foster a positive and inclusive environment, we encourage all contributors to follow the Pocketframe Community Guidelines.
 
-```
-$ USE_SSH=true yarn deploy
-```
+### Reporting Security Issues
 
-Not using SSH:
+If you identify a security vulnerability in Pocketframe, please open an issue on GitHub immediately. All security concerns will be promptly addressed.
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+## License
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Pocketframe is an open-source project licensed under the [MIT license](LICENSE).
+
