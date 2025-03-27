@@ -1,11 +1,115 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1f6bff, #14428b);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.hero .cta {
+  margin-top: 20px;
+}
+
+.hero .cta a {
+  display: inline-block;
+  background: white;
+  color: #1f6bff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero .cta a:hover {
+  background: #e0e0e0;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.feature {
+  text-align: center;
+  max-width: 300px;
+}
+
+.feature img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #1f6bff;
+}
+
+.featureIcon {
+  font-size: 3rem;
+}
+
+/* New styles for feature cards to add hover animation */
+.featureCard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #222;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }

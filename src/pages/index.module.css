@@ -4,10 +4,14 @@
  */
 
 .heroBanner {
+  /* A subtle diagonal gradient background */
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, #5f9bff 100%);
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  color: #fff;
+  /* Make text white for contrast */
 }
 
 @media screen and (max-width: 996px) {
@@ -16,8 +20,118 @@
   }
 }
 
+.heroImage {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+}
+
+/* This container helps you style the CTA (call-to-action) area */
+.ctaContainer {
+  margin-top: 2rem;
+}
+
 .buttons {
   display: flex;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
+}
+
+.button--secondary {
+  background-color: #fff;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button--secondary:hover {
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+}
+
+/* Example of a small decorative shape in the corner */
+.heroDecoration {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* Animate the decoration slightly */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.heroDecoration {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Features section styles */
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  background-color: #f9fafe;
+  /* Subtle background for contrast */
+}
+
+.featureSvg {
+  height: 180px;
+  width: 180px;
+  margin-bottom: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .features {
+    background-color: #15171a;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #1f6bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #1558b0;
 }
