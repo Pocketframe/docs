@@ -1,52 +1,53 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  // icon: React.ComponentType<React.ComponentProps<'svg'>>;
+  icon: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    title: 'Blazing Fast',
+    icon: '⚡',
+    description: <>Pocketframe is optimized for speed, ensuring rapid execution and minimal resource consumption.</>,
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    title: 'MVC Architecture',
+    icon: '🎭',
+    description: <>Built with a robust Model-View-Controller pattern, ensuring a clear separation of concerns for scalable and maintainable development.</>,
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    title: 'PHP & Beyond',
+    icon: '🚀',
+    description: <>Seamless integration with modern PHP features while maintaining a simple and clean API.</>,
   },
+  {
+    title: 'Scalable Architecture',
+    icon: '📈',
+    description: <>Designed to scale for projects of any size, ensuring stability under heavy loads.</>,
+  },
+  {
+    title: 'Robust Security',
+    icon: '🔒',
+    description: <>Built with best-in-class security practices, protecting your data every step of the way.</>,
+  },
+  {
+    title: 'Powerful ORM',
+    icon: '🗄️',
+    description: <>A robust and intuitive ORM that simplifies database interactions and optimizes performance.</>,
+  }
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, icon, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--4', styles.featureCard)}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <span className={styles.featureIcon}>{icon}</span>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
