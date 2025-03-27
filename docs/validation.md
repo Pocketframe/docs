@@ -97,7 +97,7 @@ If the validation fails, we can repopulate the form with the user's input by add
  <input id="title" type="text" name="title" value="{{ old('title') }}"/>
  ```
 
- ### Displaying customem error messages
+ ### Displaying custom error messages
  You can also display custom error messages for specific fields by calling a message method on the validator instance.
 
  ```php showLineNumbers
