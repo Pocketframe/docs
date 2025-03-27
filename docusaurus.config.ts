@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://pocketframe.io',
+  url: 'https://pocketframe.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/docs',
@@ -19,6 +19,8 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Pocketframe', // Usually your GitHub org/user name.
   projectName: 'pocketframe', // Usually your repo name.
+
+  trailingSlash: false, // Set to false to remove trailing slashes
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
