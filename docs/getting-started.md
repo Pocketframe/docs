@@ -52,7 +52,7 @@ After providing the database information, the installer will create the database
 
 Besides database setup, the installer will also create a `.env` file in the root directory of your project and add app name, generate app key and add database configuration that was provided.
 
-## Finish
+## Finishing Installation
 
 The installer will finish by prompting you to add the project to git and configure docker into your project.
 
