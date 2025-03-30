@@ -20,18 +20,41 @@ To install Pocketframe, you need to have PHP and Composer installed on your syst
 To create a new Pocketframe project, run the following command in your terminal:
 
 ```bash
-composer create-project pocketframe/application demo-app --stability dev
+pocketframe new example-project
 ```
 
-## Set Up Environment
+This will create a new directory called `example-project` with the basic structure of a Pocketframe application and install all dependencies.
 
-Copy the `.env.example` to `.env` and configure your environment variables.
+During the installation, you will be prompted whether to create a database or not.
 
-After adding your `.env` file, you can use the following command to generate an encryption key for your application:
+If you choose to create a database, the installer will take you to database setup and you will have the following options:
 
-```bash
-php pocket add:key
-```
+- Create new database
+- Use existing database
+- Skip database setup
+
+### Database Setup
+
+If you choose to create a new database or use an existing database, you will be prompted to select database type which include
+
+- MySQL
+- PostgreSQL
+
+After selecting the database type, you will be prompted to provide the following information:
+
+- Database name
+- Database username
+- Database password
+- Database host
+- Database port
+
+After providing the database information, the installer will create the database and set up the necessary tables.
+
+Besides database setup, the installer will also create a `.env` file in the root directory of your project and add app name, generate app key and add database configuration that was provided.
+
+### Finish
+
+The installer will finish by prompting you to add the project to git and configure docker into your project.
 
 ## Run Your Server
 
@@ -40,3 +63,10 @@ To start the development server, run the following command:
 ```bash
 php pocket serve
 ```
+
+This will start a development server that will run on `http://localhost:8000`.
+
+## Next Steps
+
+After starting the development server, you can start building your application.
+
