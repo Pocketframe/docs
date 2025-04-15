@@ -76,7 +76,7 @@ const config: Config = {
         src: 'img/pocketframe.png',
       },
       items: [
-        {to: '/docs/docs/intro', label: 'Documentation', position: 'left'},
+        {to: '/docs/docs/getting-started/intro', label: 'Documentation', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -98,7 +98,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/docs/getting-started/intro',
             },
           ],
         },
