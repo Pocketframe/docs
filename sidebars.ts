@@ -4,31 +4,85 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'Pocketframe Docs',
+      label: 'Getting Started',
       collapsed: false,
       items: [
-        'intro',
-        'getting-started',
-        'configuration',
-        'core-concepts',
-        'routing',
-        'middleware',
-        'controllers',
-        'csrf-protection',
-        'requests',
-        'responses',
-        'database',
-        'error-handling',
-        'logging',
-        'views',
-        'pocket-views-templating',
-        'session',
-        'validation',
-        'console',
-        'helper-functions',
-        'contributing'
+        'getting-started/intro',
+        'getting-started/getting-started',
+        'getting-started/configuration',
       ],
     },
+     {
+      type: 'category',
+      label: 'The Core',
+      collapsed: true,
+      items: [
+        'core/core-concepts',
+        'core/bootstrapping',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Essential Concepts',
+      collapsed: true,
+      items: [
+        'essentials/routing',
+        'essentials/middleware',
+        'essentials/controllers',
+        'essentials/csrf-protection',
+        'essentials/requests',
+        'essentials/responses',
+        'essentials/database',
+        'essentials/error-handling',
+        'essentials/logging',
+        'essentials/views',
+        'essentials/validation',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Getting Deeper',
+      collapsed: true,
+      items: [
+        'session',
+        'cache',
+        'file-storage',
+        'pocket-cli',
+        'helper-functions',
+      ],
+    },
+    // {
+    //   type: 'category',
+    //   label: 'PocketView Templating',
+    //   collapsed: true,
+    //   items: [
+    //     'getting-started',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'PocketORM',
+    //   collapsed: true,
+    //   items: [
+    //     'getting-started',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Testing',
+    //   collapsed: true,
+    //   items: [
+    //     'getting-started',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Extending Pocketframe',
+    //   collapsed: true,
+    //   items: [
+    //     'getting-started',
+    //   ],
+    // },
   ],
 };
 
