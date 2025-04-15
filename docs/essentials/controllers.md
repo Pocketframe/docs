@@ -24,21 +24,21 @@ All controllers are stored in the `app/Controllers` directory. Inside the Contro
 
 namespace App\Controllers\Web\Posts;
 
-use Pocketframe\Database\DB;
+use App\Entities\Category;
+use Pocketframe\PocketORM\Database\QueryEngine;
 use Pocketframe\Http\Response\Response;
 
 class PostsController
 {
   public function index(): Response
   {
-    $posts = DB::table('posts')
-      ->select(['id', 'title'])
-      ->orderByDesc('id')
-      ->paginate(10);
+    $categories = QueryEngine::for(Category::class)
+      ->select(['id', 'category_name'])
+      ->where('status', 'active')
+      ->include('tags')
+      ->get();
 
-    return Response::view('posts/index', [
-      'posts' => $posts,
-    ]);
+    return Response::view('posts.index', compact('categories'));
   }
 }
 ```
@@ -82,8 +82,10 @@ class DashboardController
 }
 ```
 
-Corresponding route
-
+**Corresponding route**
+```php
+$router->get('/dashboard', DashboardController::class);
+```
 
 ### Resource Controllers
 Resource controllers are a type of controller that is used to handle CRUD operations. They are a great way to organize your code and make it easier to maintain.

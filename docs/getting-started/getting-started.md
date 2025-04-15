@@ -124,7 +124,7 @@ example-project/
 The `app` directory contains the core application files. It includes the following directories:
 - `Controllers`: Contains the controller classes.
 - `Actions`: Contains the action classes.
-- `Container`: Contains the container classes.
+- `Container`: Contains a class for binding services to your application.
 - `Entities`: Contains the entity classes.
 - `Services`: Contains the service classes.
 - `helpers.php`: Contains the helper functions.

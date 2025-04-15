@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# Error Handling and Exceptions
+# Error Handling
 
 ### Introduction
 By default, Pocketframe will display a generic error message for any unhandled exceptions. However, you can customize the error handling behavior by creating a custom error handler.

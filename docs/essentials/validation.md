@@ -83,10 +83,13 @@ If the incoming request fails validation, we can display the validation errors t
   <div>
     <label for="title">Post Title</label>
     <input id="title" type="text" name="title" />
-    {{ display_errors('title') }}
+    {{ error_message('title') }}
   </div>
 </form>
 ```
+:::tip
+On top of the `error_message` helper, you can also use the `display_error` and `error` helper to display the error message for a specific field.
+:::
 
 ### Repopulating the form
 If the validation fails, we can repopulate the form with the user's input by adding the following code in the form input.
@@ -118,7 +121,9 @@ Validator::validate($request->all(), [
 Pocketframe provides a set of built-in validation rules that you can use to validate user input. Here are some of the most commonly used rules:
 
 - `required`: This rule ensures that the field is not empty.
+
   **Example**:
+
   ```php
   'name' => ['required']
   ```
@@ -185,23 +190,84 @@ Pocketframe provides a set of built-in validation rules that you can use to vali
   'username' => ['lowercase']
   ```
 
-- `uppercase`: This rule ensures that the field contains only uppercase characters.
+- `uppercase`: This rule ensures that the field contains only uppercase characters. This is useful for fields that should only contain uppercase characters, such as usernames or passwords.
 
   **Example**:
   ```php
   'username' => ['uppercase']
   ```
 
-- `sometime`: This rule ensures that the field contains only alphanumeric characters.
+- `sometimes`: This rule allows the field to be validated only if it is present in the request. This is useful for optional fields that may or may not be included in the request.
 -
   **Example**:
   ```php
   'username' => ['sometime', 'required']
   ```
 
-- `file`: This rule ensures that the field contains a valid file.
+- `file`: This rule ensures that the field contains a valid file. This is useful for fields that allow file uploads, such as profile pictures or document uploads.
 
   **Example**:
    ```php
    'avatar' => ['file']
    ```
+
+- `array`: This rule ensures that the field contains an array of values. This is useful for fields that allow multiple values, such as checkboxes or dropdown menus.
+
+  **Example**:
+  ```php
+  'tags' => ['array']
+  ```
+- `in`: This rule ensures that the field contains a value that is in a specified list of values. This is useful for fields that allow only specific values, such as dropdown menus or radio buttons.
+
+  **Example**:
+  ```php
+  'status' => ['in:active,inactive']
+  ```
+- `url`: This rule ensures that the field contains a valid URL. This is useful for fields that allow URLs, such as website links or social media profiles.
+
+  **Example**:
+  ```php
+  'website' => ['url']
+  ```
+- `regex`: This rule ensures that the field matches a specified regular expression. This is useful for fields that require specific formatting, such as phone numbers or credit card numbers.
+
+  **Example**:
+  ```php
+  'phone' => ['regex:/^\d{3}-\d{3}-\d{4}$/']
+  ```
+- `confirmed`: This rule ensures that the field matches a confirmation field. This is useful for fields that require confirmation, such as passwords or email addresses.
+
+  **Example**:
+  ```php
+  'password' => ['confirmed']
+  ```
+- `different`: This rule ensures that the field contains a value that is different from another field. This is useful for fields that require unique values, such as passwords or email addresses.
+
+  **Example**:
+  ```php
+  'password' => ['different:old_password']
+  ```
+- `timezone`: This rule ensures that the field contains a valid timezone. This is useful for fields that require timezone information, such as date and time fields.
+
+  **Example**:
+  ```php
+  'timezone' => ['timezone']
+  ```
+- `json`: This rule ensures that the field contains a valid JSON string. This is useful for fields that require JSON data, such as API requests or configuration files.
+
+  **Example**:
+  ```php
+  'settings' => ['json']
+  ```
+- `ip`: This rule ensures that the field contains a valid IP address. This is useful for fields that require IP address information, such as network settings or geolocation data.
+
+  **Example**:
+  ```php
+  'ip_address' => ['ip']
+  ```
+- `active_url`: This rule ensures that the field contains a valid and active URL. This is useful for fields that require URL validation, such as website links or social media profiles.
+
+  **Example**:
+  ```php
+  'website' => ['active_url']
+  ```
