@@ -45,7 +45,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         'getting-deeper/session',
-        // 'cache',
+        'getting-deeper/cache',
         // 'file-storage',
         // 'pocket-cli',
         'helper-functions',
