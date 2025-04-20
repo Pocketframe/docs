@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 17
 ---
 
 # Session
@@ -97,6 +97,11 @@ return [
      */
     'sameSite' => 'lax',
 ];
+```
+
+In you .env file, you can set the session driver by adding the following line:
+```php
+SESSION_DRIVER=database
 ```
 
 By default, the session driver is set to `database`. This means that the session data is stored in the database, which provides a secure and reliable way to store session data.
