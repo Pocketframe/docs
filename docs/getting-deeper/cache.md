@@ -3,6 +3,7 @@ sidebar_position: 18
 ---
 
 # Cache
+
 Cache is a mechanism for storing data temporarily to improve performance and reduce the load on your database. Pocketframe provides a simple caching system that allows you to cache data for a specified period of time.
 The cache system is built on top of the file system, which means that it stores cached data in files on the server. This makes it easy to use and requires no additional configuration.
 
