@@ -46,7 +46,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'getting-deeper/session',
         'getting-deeper/cache',
-        // 'file-storage',
+        'getting-deeper/file-storage',
         // 'pocket-cli',
         'helper-functions',
       ],
