@@ -47,26 +47,23 @@ const sidebars: SidebarsConfig = {
         'getting-deeper/session',
         'getting-deeper/cache',
         'getting-deeper/file-storage',
-        // 'pocket-cli',
-        'helper-functions',
+        'getting-deeper/pocket-cli',
+        'getting-deeper/helper-functions',
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'PocketView Templating',
-    //   collapsed: true,
-    //   items: [
-    //     'getting-started',
-    //   ],
-    // },
-    // {
-    //   type: 'category',
-    //   label: 'PocketORM',
-    //   collapsed: true,
-    //   items: [
-    //     'getting-started',
-    //   ],
-    // },
+    {
+      type: 'doc',
+      id: 'pocketviews/pocketview-templates',
+      label: 'PockettView Templates',
+    },
+    {
+      type: 'category',
+      label: 'PocketORM',
+      collapsed: true,
+      items: [
+        'pocketORM/getting-started',
+      ],
+    },
     // {
     //   type: 'category',
     //   label: 'Testing',
