@@ -1,9 +1,8 @@
 ---
-sidebar_position: 15
+sidebar_position: 21
 ---
 
-
-# Pocket View Template Engine
+# Pocket View Templating
 
 ### Introduction
 Pocket View uses a simple and powerful template engine that allows you to easily create and render views to your users. It provides a clean and intuitive syntax for creating dynamic views, with features like template inheritance, reusable components, caching, and more. The engine is designed to be easy to use and understand, making it a great choice for building dynamic and interactive web applications. Pocket View has greatly been inspired by Laravel's Blade template engine.
