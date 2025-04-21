@@ -62,6 +62,14 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         'pocketORM/getting-started',
+        'pocketORM/entity',
+        'pocketORM/entity-mapper',
+        'pocketORM/query-engine',
+        'pocketORM/dataset',
+        'pocketORM/relationship',
+        'pocketORM/schemascript',
+        'pocketORM/blueprint',
+        'pocketORM/dataplanter',
       ],
     },
     // {
