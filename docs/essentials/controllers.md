@@ -27,21 +27,35 @@ namespace App\Controllers\Web\Posts;
 use App\Entities\Category;
 use Pocketframe\PocketORM\Database\QueryEngine;
 use Pocketframe\Http\Response\Response;
+use Pocketframe\Utils\StringUtil;
 
 class PostsController
 {
   public function index(): Response
   {
-    $categories = QueryEngine::for(Category::class)
-      ->select(['id', 'category_name'])
-      ->where('status', 'active')
+    $posts = QueryEngine::for(Post::class)
+      ->select(['id', 'name', 'content'])
+      ->where('published_at', '>=', StringUtil::now())
       ->include('tags')
       ->get();
 
-    return Response::view('posts.index', compact('categories'));
+    return Response::view('posts.index', compact('posts'));
   }
 }
 ```
+
+In this example, the `PostsController` class has a method called `index()` that fetches posts from the database and returns a view with the fetched data.
+
+The `index()` method here is responsible for handling the request to the `/posts` route. It uses the [`QueryEngine`](/docs/pocketORM/query-engine.md) to fetch posts from the database and returns a view with the fetched data.
+The `Response::view()` method is used to return a view with the specified data.
+
+:::tip
+To read more about how to interact with the database, check out the [Query Engine](/docs/pocketORM/query-engine.md) documentation.
+:::
+
+:::tip
+If you want to dig deeper into the Response class, check out the [Response](/docs/essentials/responses.md) documentation.
+:::
 
 Once you have written a controller class and method, you may define a route to the controller method like so:
 
