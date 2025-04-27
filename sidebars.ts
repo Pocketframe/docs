@@ -63,9 +63,9 @@ const sidebars: SidebarsConfig = {
       items: [
         'pocketORM/getting-started',
         'pocketORM/entity',
-        'pocketORM/entity-mapper',
         'pocketORM/query-engine',
         'pocketORM/dataset',
+        'pocketORM/pagination',
         'pocketORM/relationship',
         'pocketORM/schemascript',
         'pocketORM/blueprint',
