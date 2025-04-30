@@ -1568,6 +1568,29 @@ $category = QueryEngine::for(Category::class)
 ->delete();
 ```
 
+## Transactions
+PocketORM supports transactions. This means that you can group multiple queries together and execute them as a single transaction. If any of the queries fail, the entire transaction will be rolled back.
+
+```php showLineNumbers
+<?php
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
+use App\Entities\Category;
+use App\Entities\Post;
+
+  DataSafe::guard(function () use ($request) {
+    $category = new Category([
+      'category_name' => $request->post('category_name'),
+      'slug'          => StringUtils::slugify($request->post('category_name')),
+      'status'        => $request->post('status'),
+      'description'   => $request->post('description'),
+    ]);
+
+    $category->save();
+
+    $category->tags()->attach($request->post('tags'));
+  });
+```
+
 ## Debugging
 The Query Engine provides a number of methods for debugging queries. These methods allow you to understand what is happening with the query.
 
