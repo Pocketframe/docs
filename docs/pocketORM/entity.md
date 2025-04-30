@@ -708,7 +708,7 @@ You can also use the `trash()` method to trash a record. The `trash()` method wi
 As we mentioned earlier, the trash column is a special column that is used to mark an entity as deleted. This is useful for trashing, where the entity is not actually deleted from the database, but is marked as deleted. By default, the trash column is called `trashed_at`, but you can override this by defining a `$trashColumn` property in the entity class.
 :::
 
-Before you starting using the `trash()` method, you need to make sure that the entity class uses the [trashable](/docs/pocketORM/entity.md#trashing) trait. This will enable the trashing feature for the entity class.
+Before you starting using the `trash()` method, you need to make sure that the entity class uses the trashable trait. This will enable the trashing feature for the entity class.
 
 ```php showLineNumbers
 <?php
