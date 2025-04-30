@@ -38,8 +38,28 @@ Generate and manage [schema scripts](/docs/pocketORM/schemascript.md) for creati
 #### 8. [Data Planter](/docs/pocketORM/dataplanter.md)
 The [data planter](/docs/pocketORM/dataplanter.md) feature allows you to populate your database with sample data. This is particularly useful for testing and development purposes, as it enables you to quickly set up a database with realistic data without having to manually enter it. Data planters can work hand in hand with blueprints to generate fake data for your entities.
 
-#### 9. [Data Safe](/docs/pocketORM/entity.md#data-safe)
+#### 9. Transaction
 The data safe feature allows to define transactional operations for your entities. This means that you can perform multiple database operations as a single unit of work, ensuring that either all operations succeed or none do. This is particularly useful for maintaining data integrity and consistency in your application.
+
+```php showLineNumbers
+<?php
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
+use App\Entities\Category;
+use App\Entities\Post;
+
+  DataSafe::guard(function () use ($request) {
+    $category = new Category([
+      'category_name' => $request->post('category_name'),
+      'slug'          => StringUtils::slugify($request->post('category_name')),
+      'status'        => $request->post('status'),
+      'description'   => $request->post('description'),
+    ]);
+
+    $category->save();
+
+    $category->tags()->attach($request->post('tags'));
+  });
+```
 
 
 #### 10. Table Utilities

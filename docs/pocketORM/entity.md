@@ -644,7 +644,7 @@ class CategoryController
   }
 }
 ```
-This will delete the category with the ID provided in the request. The `delete()` method will automatically delete the record from the database. If you are using the [trashable](/docs/pocketORM/entity.md#trashing) trait, the record will be trashed instead of permanently deleted.
+This will delete the category with the ID provided in the request. The `delete()` method will automatically delete the record from the database. If you are using the [trashable](/docs/pocketORM/entity.md#trashing-a-record) trait, the record will be trashed instead of permanently deleted.
 
 ### Deleting multiple records
 You can also delete multiple records from the database using the `destroy()` method. The `destroy()` method accepts an array of IDs to be deleted. The `destroy()` method will automatically delete the records from the database.
