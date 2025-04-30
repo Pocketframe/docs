@@ -616,7 +616,7 @@ class CategoryController
   }
 }
 ```
-This will delete the category with the ID provided in the request. The `delete()` method will automatically and permanently delete the record from the database. If you are using the [trashable](/docs/pocketORM/entity.md#trashing) trait, the record will be trashed instead of permanently deleted.
+This will delete the category with the ID provided in the request. The `delete()` method will automatically and permanently delete the record from the database. If you are using the [trashable](/docs/pocketORM/entity.md#trashing-a-record) trait, the record will be trashed instead of permanently deleted.
 
 ### Deleting a record using QueryEngine
 You can also use the `QueryEngine` to delete a record from the database. This is useful when you want to delete a record from the database without creating an entity instance.
