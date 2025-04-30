@@ -76,7 +76,7 @@ The `get()` method retrieves all records from the database that match the specif
 
 namespace App\Controllers\Web;
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 class CategoryController
@@ -106,7 +106,7 @@ The `latest()` method will retrievve the latest record from the database. This r
 <?php
 namespace App\Controllers\Web;
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 class CategoryController
@@ -133,7 +133,7 @@ The `first()` method retrieves the first record from the database that matches t
 ```php showLineNumbers
 <?php
 namespace App\Controllers\Web;
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 class CategoryController
@@ -161,7 +161,7 @@ The `find()` method retrieves a record by its primary key. This returns a single
 <?php
 namespace App\Controllers\Web;
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 class CategoryController
@@ -187,7 +187,7 @@ The `findOrFail()` method retrieves a record by its primary key. This returns a 
 ```php showLineNumbers
 <?php
 namespace App\Controllers\Web;
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 class CategoryController
 {
@@ -225,7 +225,7 @@ of the chunk and a callback function to process each chunk.
 ```php showLineNumbers
 <?php
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 QueryEngine::for(Category::class)
@@ -241,7 +241,7 @@ This will retrieve 100 records at a time and pass them to the callback function.
 The `streamEach()` method retrieves a chunk of records from the database and passes each record to a callback function. This is useful for processing large datasets in smaller batches. The method takes two arguments: the size of the chunk and an optional array of options. The options can include `'columns'` to specify the columns to select, `'orderBy'` to specify the order of the results, and `'limit'` to specify the maximum number of records to return
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $users = QueryEngine::for(User::class)
@@ -263,7 +263,7 @@ The `select()` method allows you to specify which columns to retrieve from the d
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -277,7 +277,7 @@ You can also use the `selectRaw()` method to specify raw SQL expressions in your
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -293,7 +293,7 @@ The `distinct()` method allows you to retrieve only unique records from the data
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -309,7 +309,7 @@ The `count()` method retrieves the number of records that match the specified cr
 ```php showLineNumbers
 <?php
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $count = QueryEngine::for(Category::class)
@@ -322,7 +322,7 @@ The `sum()` method retrieves the sum of a specified column. This returns an inte
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $sum = QueryEngine::for(Category::class)
@@ -336,7 +336,7 @@ The `avg()` method retrieves the average of a specified column. This returns a f
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $avg = QueryEngine::for(Category::class)
@@ -349,7 +349,7 @@ The `max()` method retrieves the maximum value of a specified column. This retur
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $max = QueryEngine::for(Category::class)
@@ -363,7 +363,7 @@ The `min()` method retrieves the minimum value of a specified column. This retur
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $min = QueryEngine::for(Category::class)
@@ -377,7 +377,7 @@ The `exists()` method checks if any records match the specified criteria. This r
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $exists = QueryEngine::for(Category::class)
@@ -392,7 +392,7 @@ The `doesntExist()` method checks if no records match the specified criteria. Th
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $doesntExist = QueryEngine::for(Category::class)
@@ -412,7 +412,7 @@ The `join()` method allows you to perform an inner join between two tables. This
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $posts = QueryEngine::for(Post::class)
@@ -433,7 +433,7 @@ This will retrieve all posts along with their associated category names by perfo
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $posts = QueryEngine::for(Post::class)
@@ -462,7 +462,7 @@ The `where()` method allows you to specify a simple where clause. This method ta
 ```php showLineNumbers
 <?php
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -477,7 +477,7 @@ The `orWhere()` method allows you to specify an "or" where clause. This method t
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -494,7 +494,7 @@ The `whereIn()` method allows you to specify a where clause with multiple values
 ```php showLineNumbers
 <?php
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -510,7 +510,7 @@ The `orWhereIn()` method allows you to specify an "or" where clause with multipl
 ```php showLineNumbers
 <?php
 
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -526,7 +526,7 @@ $categories = QueryEngine::for(Category::class)
   ```php showLineNumbers
   <?php
 
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -543,7 +543,7 @@ $categories = QueryEngine::for(Category::class)
   ```php showLineNumbers
   <?php
 
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -559,7 +559,7 @@ $categories = QueryEngine::for(Category::class)
 
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -572,7 +572,7 @@ $categories = QueryEngine::for(Category::class)
   ```php showLineNumbers
   <?php
 
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -587,7 +587,7 @@ The `whereContainsJson()` and `orWhereContainsJson()` methods allow you to speci
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Setting;
 
 $categories = QueryEngine::for(Setting::class)
@@ -600,7 +600,7 @@ $categories = QueryEngine::for(Setting::class)
   You can also apply an `orWhereContainsJson()` clause to the same query.
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Setting;
 
   $categories = QueryEngine::for(Setting::class)
@@ -618,7 +618,7 @@ The `whereAny()` method allows you to specify an array of columns to filter on. 
 
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -634,7 +634,7 @@ The `whereAny()` method allows you to specify an array of columns to filter on. 
 
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -650,7 +650,7 @@ The `whereAny()` method allows you to specify an array of columns to filter on. 
   The `whereNone()` method allows you to specify a where clause with an array of columns to filter on. This method takes takes three arguments: the columns to filter on, the operator and the value to filter by.
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -666,7 +666,7 @@ The `whereAny()` method allows you to specify an array of columns to filter on. 
   ```php showLineNumbers
   <?php
 
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -680,7 +680,7 @@ The `whereAny()` method allows you to specify an array of columns to filter on. 
   You can also pass an optional third argument to the `whereLike()` method to set the sensitivity of the LIKE operator. The default is `false`, which means the LIKE operator is case-sensitive. You can set it to `true` to make the LIKE operator case-insensitive.
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -692,7 +692,7 @@ The `whereAny()` method allows you to specify an array of columns to filter on. 
   You can also apply an `orWhereLike()` clause to the same query. This method takes two arguments: the column to filter on and the value to filter by.
   ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -707,7 +707,7 @@ The `whereBetween()` and `orWhereBetween()` methods allow you to specify a where
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -720,7 +720,7 @@ $categories = QueryEngine::for(Category::class)
 
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -734,7 +734,7 @@ $categories = QueryEngine::for(Category::class)
   The `whereNotBetween()` and `orWhereNotBetween()` methods allow you to specify a where clause with a NOT BETWEEN operator. This method takes three arguments: the column to filter on, the start value, and the end value.
   ```php showLineNumbers
   <?php
-    use Pocketframe\PocketORM\Database\QueryEngine;
+    use Pocketframe\PocketORM\QueryEngine\QueryEngine;
     use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -747,7 +747,7 @@ $categories = QueryEngine::for(Category::class)
 
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -761,7 +761,7 @@ $categories = QueryEngine::for(Category::class)
   The `whereBetweenColumn()` and `orWhereBetweenColumn()` methods allow you to specify a where clause with a BETWEEN operator between two columns. This method takes three arguments: the column to filter on, the start column, and the end column.
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Event;
 
   $events = QueryEngine::for(Event::class)
@@ -773,7 +773,7 @@ $categories = QueryEngine::for(Category::class)
   You can also apply an `orWhereBetweenColumn()` clause to the same query. This method takes three arguments: the column to filter on, the start column, and the end column.
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Event;
 
   $events = QueryEngine::for(Event::class)
@@ -790,7 +790,7 @@ These methods allow you to specify a where clause with a date comparison.
 The `whereDate()` method allows you to specify a where clause with a date comparison. This method takes three arguments: the column to filter on, the operator and the date to compare against.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -803,7 +803,7 @@ $events = QueryEngine::for(Event::class)
 The `whereMonth()` method allows you to specify a where clause with a month comparison. This method takes three arguments: the column to filter on, operator and the month to compare against.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -816,7 +816,7 @@ This will retrieve all events where the `event_date` column is in January.
 The `whereDay()` method allows you to specify a where clause with a day comparison. This method takes three arguments: the column to filter on, operator and the day to compare against.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -829,7 +829,7 @@ This will retrieve all events where the `event_date` column is on the 1st of the
 The `whereYear()` method allows you to specify a where clause with a year comparison. This method takes three arguments: the column to filter on, operator and the year to compare against.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -848,7 +848,7 @@ The `whereTime()` method allows you to specify a where clause with a time compar
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -862,7 +862,7 @@ This will retrieve all events where the `created_at` column is greater or equal 
 The `whereToday()` method allows you to specify a where clause with a today comparison. This method takes an argument: the column to filter on.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -875,7 +875,7 @@ This will retrieve all events where the `created_at` column is today.
 The `whereYesterday()` method allows you to specify a where clause with a yesterday comparison. This method takes an argument: the column to filter on.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -888,7 +888,7 @@ This will retrieve all events where the `created_at` column is yesterday.
 The `whereTomorrow()` method allows you to specify a where clause with a tomorrow comparison. This method takes an argument: the column to filter on.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -901,7 +901,7 @@ This will retrieve all events where the `created_at` column is tomorrow.
 The `whereNow()` method allows you to specify a where clause with a now comparison. This method takes an argument: the column to filter on.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -917,7 +917,7 @@ These methods allow you to specify a where clause with a before or after compari
 The `whereBefore()` method allows you to specify a where clause with a before comparison. This method takes two arguments: the column to filter on and the date to compare against.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -930,7 +930,7 @@ This will retrieve all events where the `created_at` column is before `2020-01-0
 The `whereAfter()` method allows you to specify a where clause with a after comparison. This method takes two arguments: the column to filter on and the date to compare against.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Event;
 
 $events = QueryEngine::for(Event::class)
@@ -946,7 +946,7 @@ There are times when you may need to group multiple queries together within pare
 The `whereGroup()` and `orWhereGroup()` methods allow you to group multiple queries together within parentheses and then apply a logical operator to the entire group of queries. These methods take one argument: the closure that contains the queries to be grouped.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $posts = QueryEngine::for(Post::class)
@@ -967,7 +967,7 @@ $posts = QueryEngine::for(Post::class)
 The `orWhereGroup()` method is similar to the `whereGroup()` method, but it applies a logical OR operator to the entire group of queries.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $posts = QueryEngine::for(Post::class)
@@ -995,7 +995,7 @@ The `whereExists()`, `orWhereExists()` and `whereNotExists()` methods allow you 
 The `whereExists()` method allows you to specify a where clause with an exists comparison. This method takes one argument: the closure that contains the subquery to be executed.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $posts = QueryEngine::for(Post::class)
@@ -1017,7 +1017,7 @@ $posts = QueryEngine::for(Post::class)
 The `orWhereExists()` method allows you to specify a where clause with an exists comparison. This method takes one argument: the closure that contains the subquery to be executed.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $posts = QueryEngine::for(Post::class)
@@ -1042,7 +1042,7 @@ The `whereNotExists()` method allows you to specify a where clause with an exist
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $posts = QueryEngine::for(Post::class)
@@ -1065,7 +1065,7 @@ Subqueries can be used to create more complex queries. You can use the `selectSu
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Post;
 
 $users = (new QueryEngine('user_stats'))
@@ -1149,7 +1149,7 @@ Writing efficient and performant subqueries is essential for scalable applicatio
   The `orderBy()` method allows you to specify the column to order by. This is useful for sorting the results of a query. You can also specify the direction of the order by using the `byAsc()` and `byDesc()` methods. The `orderBy()` method takes two arguments: the column to order by and the direction of the order by.
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -1163,7 +1163,7 @@ Writing efficient and performant subqueries is essential for scalable applicatio
   You can use byAsc() and byDesc() methods to specify the direction of the order by. These methods take one argument: the column to order by.
   ```php showLineNumbers
   <?php
-  use Pocketframe\PocketORM\Database\QueryEngine;
+  use Pocketframe\PocketORM\QueryEngine\QueryEngine;
   use App\Entities\Category;
 
   $categories = QueryEngine::for(Category::class)
@@ -1181,7 +1181,7 @@ You can also use the `orderByRaw()` method to specify raw SQL expressions in you
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1194,7 +1194,7 @@ This will order the results by a random column.
 You can also use the `randomOrder()` method to order the results by a random column. This is useful for shuffling the results of a query.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1208,7 +1208,7 @@ This will order the results by a random column.
 You can also use the `latest()` method to order the results by the latest column. This is useful for ordering the results by the latest column.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1221,7 +1221,7 @@ This will order the results by the `created_at` column in descending order.
 You can also use the `oldest()` method to order the results by the oldest column. This is useful for ordering the results by the oldest column.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1234,7 +1234,7 @@ This will order the results by the `created_at` column in ascending order.
 The `limit()` method allows you to specify the maximum number of records to return. This is useful for limiting the number of records returned by a query. The `limit()` method takes one argument: the maximum number of records to return.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1247,7 +1247,7 @@ This will return the first 10 records in the `categories` table.
 The `take()` method allows you to specify the number of records to return. This is useful for limiting the number of records returned by a query. The `take()` method takes one argument: the number of records to return.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1261,7 +1261,7 @@ This will return the first 10 records in the `categories` table.
 The `offset()` method allows you to specify the number of records to skip. This is useful for skipping a certain number of records before returning the results of a query. The `offset()` method takes one argument: the number of records to skip.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1275,7 +1275,7 @@ This will return the next 10 records in the `categories` table.
 The `skip()` method allows you to specify the number of records to skip. This is useful for skipping a certain number of records before returning the results of a query. The `skip()` method takes one argument: the number of records to skip.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1289,7 +1289,7 @@ This will return the next 10 records in the `categories` table.
 The `groupBy()` method allows you to group the results of a query by a specified column. This is useful for grouping the results of a query by a specified column. The `groupBy()` method takes one argument: the column to group by.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1302,7 +1302,7 @@ This will group the results of the query by the `name` column.
 The `having()` method allows you to specify a HAVING clause for the query. This is useful for filtering the results of a query by a specified column. The `having()` method takes one argument: the column to filter by.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1321,7 +1321,7 @@ The `when()` method allows you to specify a condition for the query. This is use
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1336,7 +1336,7 @@ This will filter the results of the query by the `name` column and return only t
 The `whereIf()` method allows you to specify a condition for the query. This is useful for filtering the results of a query based on certain criteria. The `whereIf()` method takes two arguments: the condition to check and the callback to execute if the condition is true.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1356,7 +1356,7 @@ This will filter the results of the query by the `name` column and return only t
 The `whereHas()` method allows you to specify a condition for the query. This is useful for filtering the results of a query based on certain criteria. The `whereHas()` method takes two arguments: the condition to check and the callback to execute if the condition is true.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1370,7 +1370,7 @@ $categories = QueryEngine::for(Category::class)
 The `whereDoesntHave()` method allows you to specify a condition for the query. This is useful for filtering the results of a query based on certain criteria. The `whereDoesntHave()` method takes two arguments: the condition to check and the callback to execute if the condition is true.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1390,7 +1390,7 @@ To read more about pagination, please read the [Pagination](/docs/pocketORM/pagi
 The `paginate()` method allows you to paginate the results of a query. This is useful for displaying a large number of records in a paginated manner. You can pass optional arguments to the `paginate()` method to customize the pagination. These include `$perPage` and `$page` arguments.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1402,7 +1402,7 @@ This will paginate the results of the query by 10 records per page. In your pock
 The `cursorPaginate()` method allows you to paginate the results of a query. This is useful for displaying a large number of records in a paginated manner. This type of pagination will return a cursor that will just return the next page of records.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1422,7 +1422,7 @@ The `insert()` method allows you to insert a record into the database. This is u
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1437,7 +1437,7 @@ The `insertOrIgnore()` method allows you to insert a record into the database or
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1450,7 +1450,7 @@ $category = QueryEngine::for(Category::class)
 The `insertOrReplace()` method allows you to insert a record into the database or replace it if it already exists. This is useful for inserting a record into the database if it does not already exist. The `insertOrReplace()` method takes an array of data to insert into the database. The array should be in the format of `[column => value]`.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1464,7 +1464,7 @@ $category = QueryEngine::for(Category::class)
 For PostgreSQL, the `insertOrReplace()` and `insertOrIgnore()` methods requires the a second argument called `conflictColumns` which can be a string or an array. This is the column(s) that will be used to determine if the record already exists. This is not required for MySQL.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1479,7 +1479,7 @@ $category = QueryEngine::for(Category::class)
 The `insertBatch()` method allows you to insert multiple records into the database. This is useful for inserting multiple records into the database. The `insertBatch()` method takes an array of arrays. Each array should be in the format of `[column => value]`.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1503,7 +1503,7 @@ The `update()` method allows you to update a record in the database. This is use
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1518,7 +1518,7 @@ $category = QueryEngine::for(Category::class)
 The `updateOrInsert()` method allows you to update a record in the database or insert it if it does not already exist. This is useful for updating a record in the database if it already exists. The `updateOrInsert()` method takes an array of data to update the record with. The array should be in the format of `[column => value]`.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1534,7 +1534,7 @@ If the record already exists, it will be updated. If the record does not exist, 
 The `updateBatch()` method allows you to update multiple records in the database. This is useful for updating multiple records in the database. The `updateBatch()` method takes an array of arrays. Each array should be in the format of `[column => value]`.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $categories = QueryEngine::for(Category::class)
@@ -1560,7 +1560,7 @@ The Query Engine supports deleting records from the database. If this methods is
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1575,7 +1575,7 @@ The Query Engine provides a number of methods for debugging queries. These metho
 The `toSql()` method allows you to see the SQL query that will be executed. This is useful for debugging queries.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1588,7 +1588,7 @@ When this method is called, it will return the SQL query that will be executed.
 The `bindSql()` method allows you to see the SQL query that will be executed, with the values bound to the query. This is useful for debugging queries.
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 $category = QueryEngine::for(Category::class)
@@ -1602,7 +1602,7 @@ You can enable debugging on a query by starting a debugger session. This will al
 
 ```php showLineNumbers
 <?php
-use Pocketframe\PocketORM\Database\QueryEngine;
+use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
 
 QueryEngine::enableQueryLog();
