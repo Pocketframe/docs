@@ -354,6 +354,9 @@ If you want to display unescaped data in your views, you can use the following s
 You should use this syntax with caution as it can lead to security vulnerabilities if not used properly.
 :::
 
+### Selected, Checked, Disabled, Required attributes
+For
+
 ### Javascript escaping
 You can escape javascript code in your views by using the following syntax:
 

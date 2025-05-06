@@ -45,22 +45,26 @@ The data safe feature allows to define transactional operations for your entitie
 <?php
 use Pocketframe\PocketORM\QueryEngine\QueryEngine;
 use App\Entities\Category;
-use App\Entities\Post;
 
-  DataSafe::guard(function () use ($request) {
-    $category = new Category([
-      'category_name' => $request->post('category_name'),
-      'slug'          => StringUtils::slugify($request->post('category_name')),
-      'status'        => $request->post('status'),
-      'description'   => $request->post('description'),
-    ]);
+class CategoriesController
+{
+  public function store(Request $request): Response
+  {
+      // Transactions
+      DataSafe::guard(function () use ($request) {
+        $category = new Category([
+          'category_name' => $request->post('category_name'),
+          'slug'          => StringUtils::slugify($request->post('category_name')),
+          'status'        => $request->post('status'),
+          'description'   => $request->post('description'),
+        ]);
+        $category->save();
 
-    $category->save();
-
-    $category->tags()->attach($request->post('tags'));
-  });
+        $category->tags()->attach($request->post('tags'));
+      });
+  }
+}
 ```
-
 
 #### 10. Table Utilities
 PocketORM provides several utilities for working with tables, including:

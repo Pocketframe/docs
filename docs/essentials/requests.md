@@ -103,10 +103,16 @@ class PostsController
   $request->file('image');
   ```
 
+- **Get and store the uploaded file**
+
+  You can use the `storeFileOrNull($key, $directory, $disk)` method to get and store the uploaded file. This method will get and store the file if available or return null if not. By default the disk is set to `public` but you can change it to any disk you want.
+  ```php
+  $request->storeFileOrNull('image', 'public');
+  ```
+
+
 - **Check if a file was uploaded for the given key**
-
   If you want to check if a file was uploaded for the given key, you can use the `hasFile($key)` method. This method will return true if the file was uploaded for the given key.
-
   ```php
   $request->hasFile($key);
   ```
